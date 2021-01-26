@@ -21,7 +21,7 @@
     class="mb-2"
   >
     <b-card-text>
-      {{content}}
+     {{eventsName}}
     </b-card-text>
 
     <b-button v-b-toggle.collapse-1 variant="info">more</b-button>
@@ -37,13 +37,12 @@
 <script>
 export default {
   data() {
-      return {
-        //card: this.venus,
-        content: this.venus,
-      }
-    },
+    return {
+      content: this.eventsName
+    }
+  },
   name: 'HelloWorld',
-props:['venus', 'lala'],
+props:['eventsName']
 }
 </script>
 

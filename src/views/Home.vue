@@ -24,9 +24,9 @@
   </b-carousel>
 </div>
 <div class='events'>
-   <HelloWorld :venus="result"></HelloWorld> 
-   <HelloWorld></HelloWorld> 
-   <HelloWorld></HelloWorld> 
+   <HelloWorld :eventsName="result"></HelloWorld> 
+   <HelloWorld :eventsName="result"></HelloWorld> 
+   <HelloWorld :eventsName="result"></HelloWorld> 
    </div>
 </div>
 </template>
