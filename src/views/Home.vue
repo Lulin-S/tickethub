@@ -42,7 +42,7 @@ export default {
   url:
     "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&countryCode=SE",
 }).then((res) => {
-  this.result = res.data._embedded.events[0].name;
+  this.result = res.data._embedded.events[0];
   console.log(this.result);
 });
 }, 

@@ -21,7 +21,11 @@
     class="mb-2"
   >
     <b-card-text>
-     {{eventsName}}
+     {{eventsName.name}}
+    </b-card-text>
+
+        <b-card-text>
+     {{eventsName._embedded.venues[0].name}}
     </b-card-text>
 
     <b-button v-b-toggle.collapse-1 variant="info">more</b-button>
