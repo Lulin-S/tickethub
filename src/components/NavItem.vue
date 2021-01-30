@@ -3,11 +3,10 @@
  <div class='topNav'>
    <div class='brand'>
         <router-link to="/">Tickets</router-link> | 
-        <router-link to="/about">Concerts</router-link>
    </div>
    <div class='info'>
-        <router-link to="/profile">Sign in</router-link>
-        </div>
+        <router-link to="/signin">Sign in</router-link>
+  </div>
  </div> 
     <router-view/> 
  </div>

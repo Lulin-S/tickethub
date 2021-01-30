@@ -1,52 +1,55 @@
 <template>
-  <div class="hello">
-  <!--  <div>
-      <select>
-  <option v-for="option in venus" :key="option">{{option}}</option>
- 
-</select>
-  </div>
-   <div>
-    <label for="example-datepicker">Choose a date</label>
-    <b-form-datepicker id="example-datepicker" v-model="value" class="mb-2"></b-form-datepicker>
-  </div>
-  <input type="text" placeholder="events"> -->
-
-  <b-card
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-     {{eventsName.name}}
-    </b-card-text>
-
-        <b-card-text>
-     {{eventsName._embedded.venues[0].name}}
-    </b-card-text>
-
-    <b-button v-b-toggle.collapse-1 variant="info">more</b-button>
-  <b-collapse id="collapse-1" class="mt-2">
+<!--   <div class="hello"> -->
+  <div id = "bcard">
+     <div v-for="(item, index) in eventsName" :key="index"> 
+       <b-card
+          :img-src="item.images[9].url"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="mb-2"
+       >
+       <b-card-text id='text'>
+        {{item.name}}
+        {{item._embedded.venues[0].city.name}}
+       </b-card-text>
+       <span v-b-toggle.collapse-1 variant="info" :class='{ isTrue: currentIndex === index}' @click = "textClick(index)">more </span>
+    <div v-if="currentIndex === index">
+       <b-collapse id="collapse-1" class="mt-2">
     <b-card>
-      <p class="card-text">contents Here</p>
+      <span class="card-text">
+        {{item._embedded.venues[0].name}}<br>
+        {{item.dates.start.localDate}}
+      </span>
     </b-card>
-  </b-collapse>
-  </b-card>
-  </div> 
+       </b-collapse>
+    </div>
+    </b-card>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      content: this.eventsName
+      currentIndex: -1,
+      venues:'',
     }
   },
+  methods:{
+     textClick(index){ 
+  this.currentIndex=index 
+  }
+},
+/* computed:{
+getName(){
+  return this.item._embedded.venues[0].name;
+}
+}, */
   name: 'HelloWorld',
-props:['eventsName']
+  props:['eventsName']
 }
 </script>
 
@@ -57,33 +60,15 @@ $color:rgb(59, 56, 56);
     color:$color;
     }
 
-
-
-/* h3 {
-  margin: 40px 0 0;
+#bcard{
+  display:flex;
+  flex-wrap: wrap;
+justify-content: space-between;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+#text:hover{
+  color: #414caf;
+} 
+.isTrue{
+  color:red;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-
-.hello{
-display: flex;
-}
-select{
-  width: 150px;
-  height: 30px;
-}
-input{
-  height: 30px;
-  width:300px;
-} */
-
 </style>

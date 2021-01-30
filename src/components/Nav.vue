@@ -1,8 +1,7 @@
 <template>
   <div id="nav">
      <slot></slot>
-  </div>
-  
+  </div>  
 </template>
 
 <script>
