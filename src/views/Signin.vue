@@ -18,10 +18,21 @@
 export default {
   data() {
       return {
-        username: '',
         password:'',
        }
     },
+  computed: {
+    username: {
+      get() {
+        return this.$store.state.username
+      },
+      set(username) {
+        this.$store.commit('setUsername', username)
+      }
+    }
+  },
+
+
   methods:{
       login(){
     if(this.username===''){

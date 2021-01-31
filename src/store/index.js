@@ -1,16 +1,18 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import state from "./state";
-import mutations from "./mutation";
 
 Vue.use(Vuex);
 
-Vue.use(Vuex);
-const store = new Vuex.Store({
-  state,
-  mutations,
+export default new Vuex.Store({
+  state: {
+    username: "",
+  },
+  mutations: {
+    setUsername(state, username) {
+      state.username = username;
+    },
+  },
 });
-export default store;
 
 /* axios({
   url:

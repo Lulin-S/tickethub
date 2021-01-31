@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <h1>Hi! {{this.$route.params.inputedname}} <br>{{ msg }}</h1>
+    <h1>Hi! {{this.$store.state.username}} <br>{{ msg }}</h1>
   </div>
 </template>
 
