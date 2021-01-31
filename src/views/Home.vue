@@ -2,7 +2,8 @@
 <div class="home">
    <Search @city-click="citySearched"></Search>
    <div class='events'>
-<HelloWorld :eventsName='result' v-if="true" ></HelloWorld>
+     <HelloWorld :eventsName='result' v-if="!isSearched()" ></HelloWorld>
+    <HelloWorld :eventsName='searchedResult' v-if="isSearched()" ></HelloWorld>
 
    </div>
 </div>
@@ -29,6 +30,7 @@ export default {
     HelloWorld,
     Search,
 },
+
   methods:{
     citySearched(city){
       const searchedResult = []
@@ -38,10 +40,16 @@ export default {
             searchedResult.push(this.result[i]) 
           }
       }
-          console.log(searchedResult)
-          //this.result = searchedResult
-          //console.log(this.result)
+          //console.log(searchedResult)
+          this.searchedResult = searchedResult
 },
+    isSearched(){
+    if(this.searchedResult.length == 0){
+      return false
+    }
+    else 
+    return true
+    },
   fetchInformation(){
     axios({
       url:
