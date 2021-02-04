@@ -18,6 +18,21 @@ export default {
     NavItem,
   }
 }
+
+getOnlineStatus().then((isOnline) => {
+  alert(isOnline ? "Online" : "Offline");
+});
+
+function getOnlineStatus() {
+  if (navigator.onLine) {
+    return fetch(location.origin, { method: "HEAD" })
+      .then(() => true)
+      .catch(() => false);
+  }
+
+  return new Promise((resolve) => resolve(false));
+}
+
 </script>
 <style lang="scss">
 @import "./assets/css/base.css";

@@ -26,16 +26,4 @@ new Vue({
 }).then((res) => {
   console.log(res);
 }); */
-getOnlineStatus().then((isOnline) => {
-  alert(isOnline ? "Online" : "Offline");
-});
 
-function getOnlineStatus() {
-  if (navigator.onLine) {
-    return fetch(location.origin, { method: "HEAD" })
-      .then(() => true)
-      .catch(() => false);
-  }
-
-  return new Promise((resolve) => resolve(false));
-}
