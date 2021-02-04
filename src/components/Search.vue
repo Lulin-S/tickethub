@@ -1,10 +1,12 @@
 <template>
+
   <div id="search">
+
 <!--     <input v-model="citiesName" type="text" placeholder="search cities...">
     <input  value="search" @click="onClick" type="button"> -->
-  <button v-for="city in cities" :key="city.name" @click="btnClick(city)"> 
+  <span v-for="city in cities" :key="city.name" @click="btnClick(city)"> 
         {{city.name}}   
-  </button>  
+  </span>  
   </div>
 </template>
 
@@ -13,10 +15,9 @@ export default {
     data() {
       return {
         cities:[
+          {name: 'Stockholm'},
           {name: 'Göteborg'},
           {name: 'Johanneshov'},
-          {name: 'Stockholm'},
-          {name: 'Linköping'},
         ]
       }
     },
@@ -31,25 +32,27 @@ export default {
    methods:{
      btnClick(city){
        this.$emit('city-click', city)
+       
      }
-   }
+   },
+
 }
 </script>
 
 <style scoped lang="scss">
-button {
-  transition-duration: 0.4s;
-  margin-bottom: 30px;
-}
-
-button:hover {
-  background-color: #676967;
-  color: rgb(255, 255, 255);
-  
-}
-
 #search {
 display: flex;
+justify-content: space-around;
+
+}
+
+span{
+  font-size: 2rem;
+  font-weight: light;
+}
+
+span:hover{
+  color: #77c6e6;
 }
 
 </style>

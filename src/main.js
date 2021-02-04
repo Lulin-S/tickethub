@@ -6,7 +6,6 @@ import store from "./store";
 import Vuex from "vuex";
 //import axios from "axios";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-
 import "./main.scss";
 
 Vue.use(BootstrapVue);

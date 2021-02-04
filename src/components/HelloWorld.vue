@@ -1,30 +1,26 @@
 <template>
-<!--   <div class="hello"> -->
   <div id = "bcard">
-     <div v-for="(item, index) in eventsName" :key="index"> 
-       <b-card
+    <div v-for="(item, index) in eventsName" :key="index"> 
+      <b-card id="cardbox"
           :img-src="item.images[9].url"
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem;"
+          style="max-width: 22rem; height:26rem"
           class="mb-2"
        >
-       <b-card-text id='text'>
+      <b-card-text id='text'>
         {{item.name}}
-        {{item._embedded.venues[0].city.name}}
-       </b-card-text>
-       <span v-b-toggle.collapse-1 variant="info" :class='{ isTrue: currentIndex === index}' @click = "textClick(index)">more </span>
-    <div v-if="currentIndex === index">
-       <b-collapse id="collapse-1" class="mt-2">
-    <b-card>
-      <span class="card-text">
-        {{item._embedded.venues[0].name}}<br>
-        {{item.dates.start.localDate}}
-      </span>
-    </b-card>
-       </b-collapse>
-    </div>
+      </b-card-text>
+      <div id="venuesrender">{{item._embedded.venues[0].city.name}}</div> 
+       <span id="moreinfo" v-b-toggle.collapse-1 :class='{ isTrue: currentIndex === index}' @click = "textClick(index)">more info</span>
+       <div v-if="currentIndex === index">
+          <b-collapse id="collapse-1" class="mt-2">
+              <span id="card-text">
+                Venues: {{item._embedded.venues[0].name}}<br>{{item.dates.start.localDate}}
+              </span> 
+          </b-collapse>
+      </div>
     </b-card>
     </div>
   </div>
@@ -42,33 +38,55 @@ export default {
      textClick(index){ 
   this.currentIndex=index 
   }
-},
-/* computed:{
-getName(){
-  return this.item._embedded.venues[0].name;
-}
-}, */
+ },
+
   name: 'HelloWorld',
-  props:['eventsName']
+  props:{eventsName:Object}//['eventsName']
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-$color:rgb(59, 56, 56);
-.hello {
-    color:$color;
-    }
+$color:rgb(242, 245, 247);
 
 #bcard{
   display:flex;
   flex-wrap: wrap;
-justify-content: space-between;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+#cardbox{
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+  background:$color;
+  margin:8% auto 0;
+  
 }
 #text:hover{
-  color: #414caf;
+  color: #4aa8e7;
 } 
-.isTrue{
-  color:red;
+#moreinfo:hover{
+  color:#4f99ca;
+
 }
+#venuesrender{
+  position: absolute;
+  right:30px;
+  bottom:20px
+}
+#moreinfo{
+  font-size:1rem;
+  font-weight: light;
+  font-style: italic;
+}
+#card-text{
+  font-size: 1rem;
+  line-height: 150%;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+
 </style>

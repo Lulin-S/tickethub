@@ -1,4 +1,5 @@
 <template>
+<!-- creat a sign in form -->
   <div class="sign-in-form">
     <h1>Sign In Here</h1>
     <form>
@@ -52,17 +53,18 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
+$white: rgb(252, 250, 250);
 .sign-in-form{
-  width:500px;
+  width:400px;
   box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
-  background:#fff;
+  background:$white;
   padding: 20px;
   margin:8% auto 0;
   text-align: center;
 }
 .sign-in-form h1{
-  color: #1c8adb;
+  color: #1c8bdbd3;
   margin-bottom:30px;
 }
 
@@ -76,10 +78,10 @@ export default {
 }
 
 button{
-  color:#fff;
+  color:$white;
   width:100%;
   padding:10px;
-  border-radius: 20px;
+  border-radius: 18px;
   font-size: 15px;
   margin: 10px 0;
   border: none;
@@ -100,8 +102,8 @@ hr{
   width: 80%;
 }
 .or{
-  background: #fff ;
+  background: $white ;
   width:50px;
-  margin: -40px auto 10px;
+  margin: -30px auto 10px;
 }
 </style>

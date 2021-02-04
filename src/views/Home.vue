@@ -1,11 +1,20 @@
 <template>
 <div class="home">
+  <div class="pic">
+    <p style="position: absolute; top: 210px; left: 60px; color: white;"><strong>The Stranglers - European Tour</strong><br>
+Det legendariska punkbandet The Stranglers återupptar deras 2020-<br>turné till minne av Dave Greenfield som tragiskt avled av Covid-19. <br>Det blir tre hyllningsspelningar i Sverige under ”European Tour 2021”:<br> Göteborg, Stockholm och Malmö.</p>
+    <img src="../assets/img/bgd.jpg" width="1280px" alt="">
+  </div>
+  <hr>
+  <div id = "search">
    <Search @city-click="citySearched"></Search>
    <div class='events'>
      <HelloWorld :eventsName='result' v-if="!isSearched()" ></HelloWorld>
     <HelloWorld :eventsName='searchedResult' v-if="isSearched()" ></HelloWorld>
-
+</div>
+  
    </div>
+<FooterPage></FooterPage>
 </div>
 </template>
 
@@ -13,7 +22,8 @@
 // @ is an alias to /src
 import HelloWorld from 'components/HelloWorld.vue'
 import Search from 'components/Search.vue'
-import axios from "axios";
+import axios from "axios"
+import FooterPage from 'components/footer.vue'
 
 export default {
   created(){
@@ -29,6 +39,7 @@ export default {
   components: {
     HelloWorld,
     Search,
+    FooterPage 
 },
 
   methods:{
@@ -64,15 +75,38 @@ export default {
 </script>
 
 <style lang="scss">
+$white: rgb(252, 250, 250);
+body{
+  background-color:$white;
+}
 .home{
   display:flex;
   flex-direction: column;
 }
 .pic{
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .events{
   display: flex;
   justify-content: space-around;
+}
+hr{
+width:80%;
+ margin:10 auto;
+ border: 0;
+ height: 2px;
+ background:rgb(214, 213, 213);
+ //background-image: linear-gradient(to right, rgb(118, 170, 196), rgb(123, 131, 240), rgb(147, 212, 243));
+}
+.carousel{
+height: 427px;
+width: 640px;
+}
+
+#search{
+  padding:20px;
+}
+strong{
+  font-size: 2rem;
 }
 </style>
