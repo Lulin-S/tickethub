@@ -2,8 +2,7 @@
 <div>
  <div class='topNav'>
    <div class='brand'>
-        <router-link to="/TicketHub"><img src="../assets/img/tickets1.svg" width="170px" height="80px" alt="">Tickets </router-link>
-        <router-link class="signin"  to="/signin">Concerts</router-link>
+        <router-link to="/TicketHub"><img src="../assets/img/tickets1.svg" width="170px" height="80px" alt="">Concerts </router-link>
    </div>
    <div class='info'>
         <router-link id="userinfo" class="signin" to="/signin" v-if = "isnotLogin() && homepage()">Sign in<p>
@@ -70,7 +69,8 @@ methods:{
  // box-shadow: 10px 1px 20px  rgba(133, 134, 134, 0.6); 
 }
 .brand{
-  padding-top: 15px;
+  padding-top: 12px;
+  padding-left: 30px ;
 }
 .signin{
   font-size: 1.5rem;
@@ -79,8 +79,9 @@ methods:{
 }
 #userinfo{
   display: flex;
-  font-size:2rem;
-  padding-top: 20px;
+  font-size:1.3rem;
+  padding-top: 30px;
+  padding-right: 30px;
 }
 i{
   margin-left: 10px;

@@ -3,7 +3,7 @@
   <div class="pic">
     <p style="position: absolute; top: 210px; left: 60px; color: white;"><strong>The Stranglers - European Tour</strong><br>
 Det legendariska punkbandet The Stranglers återupptar deras 2020-<br>turné till minne av Dave Greenfield som tragiskt avled av Covid-19. <br>Det blir tre hyllningsspelningar i Sverige under ”European Tour 2021”:<br> Göteborg, Stockholm och Malmö.</p>
-    <img src="../assets/img/bgd.jpg" width="1280px" alt="">
+    <img class='Img' src="../assets/img/bgd.jpg" width="1280px" alt="">
   </div>
   <hr>
   <div id = "search">
@@ -84,7 +84,7 @@ body{
   flex-direction: column;
 }
 .pic{
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .events{
   display: flex;
@@ -102,9 +102,12 @@ width:80%;
 height: 427px;
 width: 640px;
 }
-
+.Img{
+   box-shadow: 0px 6px 10px rgba(0,0,0,.5);
+}
 #search{
-  padding:20px;
+  padding:24px;
+  padding-top: 2px;
 }
 strong{
   font-size: 2rem;

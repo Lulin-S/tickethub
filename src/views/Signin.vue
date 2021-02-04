@@ -1,5 +1,6 @@
 <template>
 <!-- creat a sign in form -->
+<div>
   <div class="sign-in-form">
     <h1>Sign In Here</h1>
     <form>
@@ -12,10 +13,14 @@
       <p>Don't have an account yet?<br>
       <a href="#"> Sign Up</a></p>
     </form>
+
   </div>
+     <FooterPage></FooterPage>
+    </div>
 </template>
 
 <script>
+import FooterPage from 'components/footer.vue'
 export default {
   data() {
       return {
@@ -50,6 +55,9 @@ export default {
     }
     },
   name: 'Signin',
+   components: {
+   FooterPage,
+},
 }
 </script>
 
@@ -60,7 +68,7 @@ $white: rgb(252, 250, 250);
   box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
   background:$white;
   padding: 20px;
-  margin:8% auto 0;
+  margin:8% auto 60px;
   text-align: center;
 }
 .sign-in-form h1{

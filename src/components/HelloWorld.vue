@@ -13,14 +13,9 @@
         {{item.name}}
       </b-card-text>
       <div id="venuesrender">{{item._embedded.venues[0].city.name}}</div> 
-       <span id="moreinfo" v-b-toggle.collapse-1 :class='{ isTrue: currentIndex === index}' @click = "textClick(index)">more info</span>
-       <div v-if="currentIndex === index">
-          <b-collapse id="collapse-1" class="mt-2">
-              <span id="card-text">
+          <span id="card-text">
                 Venues: {{item._embedded.venues[0].name}}<br>{{item.dates.start.localDate}}
-              </span> 
-          </b-collapse>
-      </div>
+          </span>   
     </b-card>
     </div>
   </div>
@@ -34,12 +29,6 @@ export default {
       venues:'',
     }
   },
-  methods:{
-     textClick(index){ 
-  this.currentIndex=index 
-  }
- },
-
   name: 'HelloWorld',
   props:{eventsName:Object}//['eventsName']
 }
@@ -53,7 +42,7 @@ $color:rgb(242, 245, 247);
   display:flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 #cardbox{
   box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
@@ -71,22 +60,19 @@ $color:rgb(242, 245, 247);
 #venuesrender{
   position: absolute;
   right:30px;
-  bottom:20px
-}
-#moreinfo{
-  font-size:1rem;
-  font-weight: light;
-  font-style: italic;
+  bottom:20px;
+  font-size: 1.2rem;
 }
 #card-text{
   font-size: 1rem;
-  line-height: 150%;
+  position: absolute;
+  left:20px;
+  bottom:20px
 }
 .card-img-top {
     width: 100%;
     height: 15vw;
     object-fit: cover;
 }
-
 
 </style>
