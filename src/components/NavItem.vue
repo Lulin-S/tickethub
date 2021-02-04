@@ -2,25 +2,18 @@
 <div>
  <div class='topNav'>
    <div class='brand'>
-        <router-link to="/TicketHub"><img src="../assets/img/tickets1.svg" width="170px" height="80px" alt="">Concerts </router-link>
+        <router-link to="/TicketHub"><img src="../assets/img/tickets1.svg" width="170px" height="80px" alt="" >Concerts </router-link>
    </div>
    <div class='info'>
         <router-link id="userinfo" class="signin" to="/signin" v-if = "isnotLogin() && homepage()">Sign in<p>
            <i class="fa fa-user-circle"></i>
          </p></router-link>
-        <router-link to="/profile" v-if = "!isnotLogin() && signinpage() ">Welcome!  {{this.$store.state.username}}</router-link>
+        <router-link :to="'/profile/'+inputedname" v-if = "!isnotLogin() && signinpage() ">Welcome!  {{this.$store.state.username}}</router-link>
         <router-link  id='userinfo' to="/profile" v-if = "!isnotLogin() && homepage()">{{this.$store.state.username}} <p>
            <i class="fa fa-user-circle"></i>
          </p>  
         </router-link>
   </div>
-  
-  <!-- <div class='info'>
-        <span v-if="user"> {{username}}
-            <el-button type="warning"  @click="login"></el-button>
-        </span>
-        <el-button v-else type="success" @click="login">Sign in</el-button>
-  </div> -->
  </div> 
     <router-view/> 
  </div>
@@ -29,6 +22,7 @@
 <script>
 export default {
 methods:{
+  //method to check whether the user is logged in or not
   isnotLogin(){
     if(this.$store.state.username == ""){
       return true
@@ -36,18 +30,19 @@ methods:{
     else 
     return false
   },
+  //method to check whether in home page or not
   homepage(){
     if(this.$router.currentRoute.name == "Home")
     return true
     else
     return false
   },
+  //method to check whether in signin page or not
   signinpage(){
     if(this.$router.currentRoute.name == "Signin")
     return false
   }
 }
-
 }
 </script>
 

@@ -5,6 +5,10 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: "",
+    redirect: "/TicketHub",
+  },
+  {
     path: "/TicketHub",
     name: "Home",
     component: () => import("views/Home.vue"),
@@ -26,6 +30,7 @@ const routes = [
 
 const router = new VueRouter({
   routes,
+  mode: "history",
 });
 
 export default router;

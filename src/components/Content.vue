@@ -1,5 +1,6 @@
 <template>
   <div id = "bcard">
+    <!-- v-for -->
     <div v-for="(item, index) in eventsName" :key="index"> 
       <b-card id="cardbox"
           :img-src="item.images[9].url"
@@ -30,7 +31,7 @@ export default {
     }
   },
   name: 'HelloWorld',
-  props:{eventsName:Object}//['eventsName']
+  props:{eventsName:Array}
 }
 </script>
 
@@ -74,5 +75,14 @@ $color:rgb(242, 245, 247);
     height: 15vw;
     object-fit: cover;
 }
-
+@media only screen and (min-width: 1490px) {
+.card-img-top{
+    height: 220px;
+  }
+}
+@media only screen and (max-width: 1070px) {
+.card-img-top{
+    height: 220px;
+  }
+}
 </style>

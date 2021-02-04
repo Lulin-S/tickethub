@@ -1,9 +1,5 @@
 <template>
-
   <div id="search">
-
-<!--     <input v-model="citiesName" type="text" placeholder="search cities...">
-    <input  value="search" @click="onClick" type="button"> -->
   <span v-for="city in cities" :key="city.name" @click="btnClick(city)"> 
         {{city.name}}   
   </span>  
@@ -15,20 +11,15 @@ export default {
     data() {
       return {
         cities:[
+          {name: 'All concerts'},
           {name: 'Stockholm'},
           {name: 'Göteborg'},
           {name: 'Johanneshov'},
         ]
       }
     },
-    /* methods: {
-      onClick() {
-        this.citiesName = this.citiesName + 'rr'
-
-        this.$emit('cityevents-search', this.citiesName)
-      }
-    }, */
    name: 'Search',
+   //custom events to pass data to parent component
    methods:{
      btnClick(city){
        this.$emit('city-click', city)
@@ -54,5 +45,13 @@ span{
 span:hover{
   color: #77c6e6;
 }
+
+
+ @media only screen and (max-width: 800px) {
+span{
+font-size: 1rem;
+  }
+}
+
 
 </style>

@@ -1,7 +1,9 @@
 <template>
-<div>
+<div id='container'>
+  <!-- Vuex data -->
+  <header> <h3>Hi! {{this.$store.state.username}} <br>{{ msg }}</h3></header>
   <div class="main">
-    <h3>Hi! {{this.$store.state.username}} <br>{{ msg }}</h3>
+    <!-- bootstrapvue -->
     <div class='collapsebox'>
     <div>
       <span v-b-toggle.collapse-1><i class="fa fa-ticket"></i>My tickts</span>
@@ -29,7 +31,7 @@
     </div>
  </div>
 </div>
-      <FooterPage></FooterPage>
+     <div class='footerbox'><FooterPage></FooterPage></div> 
   </div>
 </template>
 
@@ -49,16 +51,15 @@ import FooterPage from 'components/footer.vue'
 </script>
 
 <style scoped lang="scss">
-.main{
-  padding:100px;
+header{
+  padding:60px;
 }
 .collapsebox{
-  margin-top: 60px;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 60px;
+  height: 120px;
+  margin-bottom: 340px;
 }
-
 span{
   font-size: 1.5rem;
 }

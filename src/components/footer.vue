@@ -1,26 +1,23 @@
 <template>
   <div class='footerbox'>
     <div class='textbox'>
-<div>
-  <p>Join us!<br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><a href="#">Sign up</a></p>
-</div>
-<div>
-<p>Customer service<br><a href="#">Help</a><br><a href="#"> Fan Guarantee</a><br><a href="#"> Gift card</a><br><a href="#">Cancellation insurance</a>
-</p>
-</div>
-<div>
-  <p>Get to know us<br><a href="#">About us</a><br><a href="#">Our blog</a><br><a href="#">Company culture</a></p>
-</div>
-</div>
-<hr>
-<div class='icoinbox'>
-  <a><i class="fa fa-facebook"></i></a>
-  <a><i class="fa fa-twitter"></i></a>
-  <a><i class="fa fa-dribbble"> </i></a>
-</div>
-
-
-
+      <div>
+            <p>Join us!<br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><a href="#">Sign up</a></p>
+      </div>
+      <div>
+          <p>Customer service<br><a href="#">Help</a><br><a href="#"> Fan Guarantee</a><br><a href="#"> Gift card</a><br><a href="#">Cancellation insurance</a>
+          </p>
+      </div>
+      <div>
+            <p>Get to know us<br><a href="#">About us</a><br><a href="#">Our blog</a><br><a href="#">Company culture</a></p>
+      </div>
+    </div>
+          <hr>
+      <div class='icoinbox'>
+            <a><i class="fa fa-facebook"></i></a>
+            <a><i class="fa fa-twitter"></i></a>
+            <a><i class="fa fa-dribbble"> </i></a>
+      </div>
   </div>
 </template>
 <style scoped lang="scss">

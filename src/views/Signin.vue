@@ -1,22 +1,38 @@
 <template>
 <!-- creat a sign in form -->
 <div>
-  <div class="sign-in-form">
-    <h1>Sign In Here</h1>
-    <form>
-      <input type="text" class="input-box" v-model="username" placeholder="Your Username">
-      <input type="password" class="input-box" v-model="password" placeholder="Your Password">
-      <button type="button" @click="login" class="signin-box">Sign in</button>
-      <hr>
-      <p class="or">OR</p>
-      <button type="button" class="facebook-btn">Login with Facebook</button>
-      <p>Don't have an account yet?<br>
-      <a href="#"> Sign Up</a></p>
-    </form>
-
-  </div>
-     <FooterPage></FooterPage>
+  <div >
+    <div class="sign-in-form">
+     <h1>Sign In Here</h1>
+        <form>
+          <input type="text" class="input-box" v-model="username" placeholder="Your Username" required>
+          <input type="password" class="input-box" v-model="password" placeholder="Your Password" required>
+          <button type="button" @click="login" class="signin-box">Sign in</button>
+          <hr>
+          <p class="or">OR</p>
+          <button type="button" class="facebook-btn">Login with Facebook</button>
+          <p>Don't have an account yet?<br></p>
+          <b-button v-b-toggle.sidebar-right>Sign Up</b-button>
+        </form>
     </div>
+    <div>
+     <b-sidebar id="sidebar-right" title="Register" right shadow>
+      <div class="px-3 py-2">
+        <form>
+          <h5>Please input you email</h5>
+          <input type="email" class="input-box" v-model="creatEmail" placeholder="Your Username" required>
+          <h5>Please input you password</h5>
+          <input type="password" class="input-box" v-model="creatPassword" placeholder="Your Password" required>
+          <span> * The maximum length of the password is 9 characters </span>
+      
+          <button type="button" @click="login" class="signin-box">Confirm</button>  
+        </form>
+      </div>
+     </b-sidebar>
+    </div>
+ </div>
+     <FooterPage></FooterPage>
+</div>
 </template>
 
 <script>
@@ -25,8 +41,18 @@ export default {
   data() {
       return {
         password:'',
+        creatPassword:'',
+        creatEmail:'',
        }
     },
+  //watch function for monitoring signup password length
+    watch: {
+      creatPassword(password1, password2) {
+        if(password1.length > 9 || password2.length > 9  )
+        alert("Please set a password with maximum length of 9 characters!")
+      }
+    },
+//Vuex data update
   computed: {
     username: {
       get() {
@@ -37,7 +63,6 @@ export default {
       }
     }
   },
-
 
   methods:{
       login(){
@@ -113,5 +138,10 @@ hr{
   background: $white ;
   width:50px;
   margin: -30px auto 10px;
+}
+span{
+  font-size:x-small;
+  font-weight:light;
+  color:red;
 }
 </style>
