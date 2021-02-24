@@ -1,23 +1,26 @@
 <template>
-  <div id = "bcard">
+  <div id="bcard">
     <!-- v-for -->
-    <div v-for="(item, index) in eventsName" :key="index"> 
-      <b-card id="cardbox"
-          :img-src="item.images[9].url"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 22rem; height:26rem"
-          class="mb-2"
-       >
-      <b-card-text id='text'>
-        {{item.name}}
-      </b-card-text>
-      <div id="venuesrender">{{item._embedded.venues[0].city.name}}</div> 
-          <span id="card-text">
-                Venues: {{item._embedded.venues[0].name}}<br>{{item.dates.start.localDate}}
-          </span>   
-    </b-card>
+    <div v-for="(item, index) in eventsName" :key="index">
+      <b-card
+        id="cardbox"
+        :img-src="item.images[9].url"
+        img-alt="Image"
+        img-top
+        tag="article"
+        style="22rem; height: 26rem"
+        class="mb-2"
+      >
+        <b-card-text id="text">
+          {{ item.name }}
+        </b-card-text>
+        <div id="venuesrender">{{ item._embedded.venues[0].city.name }}</div>
+        <span id="card-text">
+          Venues: {{ item._embedded.venues[0].name }}<br />{{
+            item.dates.start.localDate
+          }}
+        </span>
+      </b-card>
     </div>
   </div>
 </template>
@@ -27,61 +30,59 @@ export default {
   data() {
     return {
       currentIndex: -1,
-      venues:'',
+      venues: ''
     }
   },
   name: 'HelloWorld',
-  props:{eventsName:Array}
+  props: { eventsName: Array }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-$color:rgb(242, 245, 247);
+$color: rgb(242, 245, 247);
 
-#bcard{
-  display:flex;
+#bcard {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 1.5rem;
 }
-#cardbox{
-  box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
-  background:$color;
-  margin:8% auto 0;
-  
+#cardbox {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  background: $color;
+  margin: 8% auto 0;
 }
-#text:hover{
+#text:hover {
   color: #4aa8e7;
-} 
-#moreinfo:hover{
-  color:#4f99ca;
-
 }
-#venuesrender{
+#moreinfo:hover {
+  color: #4f99ca;
+}
+#venuesrender {
   position: absolute;
-  right:30px;
-  bottom:20px;
+  right: 30px;
+  bottom: 20px;
   font-size: 1.2rem;
 }
-#card-text{
+#card-text {
   font-size: 1rem;
   position: absolute;
-  left:20px;
-  bottom:20px
+  left: 20px;
+  bottom: 20px;
 }
 .card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }
 @media only screen and (min-width: 1490px) {
-.card-img-top{
+  .card-img-top {
     height: 220px;
   }
 }
 @media only screen and (max-width: 1070px) {
-.card-img-top{
+  .card-img-top {
     height: 220px;
   }
 }
