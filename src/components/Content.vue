@@ -8,7 +8,7 @@
         img-alt="Image"
         img-top
         tag="article"
-        style="22rem; height: 26rem"
+        style="width: 22rem; height: 26rem"
         class="mb-2"
       >
         <b-card-text id="text">
