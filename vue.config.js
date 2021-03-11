@@ -2,32 +2,41 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        assets: "@/assets",
-        common: "@/common",
-        components: "@/components",
-        network: "@/network",
-        views: "@/views",
-      },
-    },
+        assets: '@/assets',
+        common: '@/common',
+        components: '@/components',
+        network: '@/network',
+        views: '@/views'
+      }
+    }
   },
   pwa: {
     manifestOptions: {
-      background_color: "hotpink",
+      background_color: 'hotpink'
     },
-    name: "Min app",
-    themeColor: "steelblue",
+    name: 'Min app',
+    themeColor: 'steelblue',
     workboxOptions: {
       runtimeCaching: [
         {
-          handler: "NetworkFirst",
+          handler: 'NetworkFirst',
           options: {
-            networkTimeoutSeconds: 5,
+            networkTimeoutSeconds: 5
           },
-          method: "GET",
+          method: 'GET',
           urlPattern:
-            "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&countryCode=SE",
-        },
+            'https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&countryCode=SE'
+        }
       ],
-    },
-  },
-};
+      workboxOptions: {
+        manifestTransforms: [
+          (manifest) => ({
+            manifest: manifest.concat([
+              { revision: 0, url: '/some-cachefirst-file.txt' }
+            ])
+          })
+        ]
+      }
+    }
+  }
+}
