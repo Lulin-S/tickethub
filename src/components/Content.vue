@@ -47,29 +47,33 @@ $color: rgb(242, 245, 247);
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 1.5rem;
+  padding: 60px;
 }
 #cardbox {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-  background: $color;
-  margin: 8% auto 0;
+  background: #6457b4;
+  margin: 30px auto;
 }
 #text:hover {
-  color: #4aa8e7;
+  color: #050007;
 }
-#moreinfo:hover {
-  color: #4f99ca;
-}
+
 #venuesrender {
   position: absolute;
   right: 30px;
   bottom: 20px;
   font-size: 1.2rem;
+  color: $color;
+}
+#text {
+  color: $color;
 }
 #card-text {
   font-size: 1rem;
   position: absolute;
   left: 20px;
   bottom: 20px;
+  color: $color;
 }
 .card-img-top {
   width: 100%;

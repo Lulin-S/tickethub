@@ -2,14 +2,8 @@
   <div>
     <div class="topNav">
       <div class="brand">
-        <router-link to="/TicketHub"
-          ><img
-            src="../assets/img/tickets1.svg"
-            width="170px"
-            height="80px"
-            alt=""
-          />Concerts
-        </router-link>
+        <router-link to="/TicketHub">TicketHub </router-link>
+        <router-link to="/TicketHub">Concerts </router-link>
       </div>
       <div class="info">
         <router-link
@@ -68,34 +62,41 @@ export default {
   display: flex;
   justify-content: space-between;
   background-size: 100% 100%;
-  background-color: #102038;
-  box-shadow: 0 0 3px 0 rgba(56, 54, 54, 0.3);
+  //background-color: #f59c48;
+  //box-shadow: 0 0 3px 0 rgba(56, 54, 54, 0.3);
   a {
     color: #fafbfc;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-decoration: none;
-    /*  &.router-link-exact-active :hover{
-      color: #79aee2;
-    } */
+  }
+  a:hover {
+    color: #75428a;
   }
   // box-shadow: 10px 1px 20px  rgba(133, 134, 134, 0.6);
 }
 .brand {
-  padding-top: 12px;
-  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px;
+  width: 450px;
+  //background-image: url('../assets/img/concertsbanner1.jpg');
+}
+.brand :nth-child(2) {
+  font-size: 2rem;
+  padding-top: 8px;
 }
 .signin {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 10px;
   font-weight: light;
 }
 #userinfo {
   display: flex;
   font-size: 1.3rem;
-  padding-top: 30px;
-  padding-right: 30px;
+  align-items: center;
 }
 i {
-  margin-left: 10px;
+  margin: 22px 30px 0 10px;
 }
 </style>

@@ -1,16 +1,21 @@
 <template>
   <div class="home">
     <div class="pic">
-      <p style="position: absolute; top: 210px; left: 60px; color: white">
-        <strong>The Stranglers - European Tour</strong><br />
-        Det legendariska punkbandet The Stranglers återupptar deras 2020-<br />turné
-        till minne av Dave Greenfield som tragiskt avled av Covid-19. <br />Det
-        blir tre hyllningsspelningar i Sverige under ”European Tour 2021”:<br />
-        Göteborg, Stockholm och Malmö.
-      </p>
-      <img class="Img" src="../assets/img/nasa.jpg" height="380px" alt="" />
+      <div class="cover">
+        <img src="@/assets/img/concertsbanner1.jpg" alt="" />
+      </div>
+      <div>
+        <p>
+          <strong>The Stranglers - European Tour</strong><br />
+          Det legendariska punkbandet The Stranglers återupptar deras 2020-<br />turné
+          till minne av Dave Greenfield som tragiskt avled av Covid-19.
+          <br />Det blir tre hyllningsspelningar i Sverige under ”European Tour
+          2021”:<br />
+          Göteborg, Stockholm och Malmö.
+        </p>
+      </div>
     </div>
-    <hr />
+    <div class="line"></div>
     <div id="search">
       <Search @city-click="citySearched"></Search>
       <div class="events">
@@ -83,26 +88,57 @@ export default {
 <style lang="scss">
 $white: rgb(252, 250, 250);
 body {
-  background-color: $white;
+  background: linear-gradient(315deg, #ff0058, #03a9f4);
 }
 .home {
   display: flex;
   flex-direction: column;
 }
 .pic {
-  margin-bottom: 30px;
-}
-.events {
+  height: 320px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-around;
 }
-hr {
+.pic p {
+  color: $white;
+  padding-top: 100px;
+}
+.pic img {
+  width: 800px;
+  height: 300px;
+  display: block;
+  margin-bottom: 20px;
+}
+/* .cover {
+  width: 800px;
+  height: 300px;
+  position: relative;
+}
+.cover:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 50px 0 #03a9f4 inset;
+} */
+.events {
+  display: flex;
+  justify-content: space-between;
+}
+.line {
+  height: 1px;
   width: 80%;
-  margin: 10 auto;
-  border: 0;
-  height: 2px;
-  background: rgb(214, 213, 213);
-  //background-image: linear-gradient(to right, rgb(118, 170, 196), rgb(123, 131, 240), rgb(147, 212, 243));
+  margin: 0 auto;
+  background: rgb(252, 250, 250);
+  background-image: linear-gradient(
+    to right,
+    rgb(207, 77, 186),
+    rgb(97, 104, 209),
+    rgb(55, 54, 168)
+  );
 }
 .carousel {
   height: 427px;
@@ -112,8 +148,8 @@ hr {
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
 }
 #search {
-  padding: 24px;
-  padding-top: 2px;
+  padding-top: 20px;
+  color: $white;
 }
 strong {
   font-size: 2rem;

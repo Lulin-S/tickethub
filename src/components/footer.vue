@@ -37,7 +37,7 @@
 </template>
 <style scoped lang="scss">
 .footerbox {
-  background-color: #102038;
+  background-color: #050007;
   height: 300px;
   display: flex;
   flex-direction: column;
