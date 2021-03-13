@@ -8,7 +8,7 @@
         img-alt="Image"
         img-top
         tag="article"
-        style="width: 22rem; height: 26rem"
+        style="width: 30rem; height: 28rem"
         class="mb-2"
       >
         <b-card-text id="text">
@@ -51,8 +51,8 @@ $color: rgb(242, 245, 247);
 }
 #cardbox {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-  background: #6457b4;
-  margin: 30px auto;
+  background: #f2ecfd;
+  margin: 30px 20px 0 0;
 }
 #text:hover {
   color: #050007;
@@ -63,17 +63,17 @@ $color: rgb(242, 245, 247);
   right: 30px;
   bottom: 20px;
   font-size: 1.2rem;
-  color: $color;
+  color: black;
 }
 #text {
-  color: $color;
+  color: black;
 }
 #card-text {
   font-size: 1rem;
   position: absolute;
   left: 20px;
   bottom: 20px;
-  color: $color;
+  color: black;
 }
 .card-img-top {
   width: 100%;

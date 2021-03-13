@@ -97,6 +97,6 @@ export default {
   align-items: center;
 }
 i {
-  margin: 22px 30px 0 10px;
+  margin: 22px 60px 0 10px;
 }
 </style>

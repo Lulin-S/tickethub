@@ -1,10 +1,7 @@
 <template>
   <div class="home">
     <div class="pic">
-      <div class="cover">
-        <img src="@/assets/img/concertsbanner1.jpg" alt="" />
-      </div>
-      <div>
+      <div class="item1">
         <p>
           <strong>The Stranglers - European Tour</strong><br />
           Det legendariska punkbandet The Stranglers återupptar deras 2020-<br />turné
@@ -14,6 +11,10 @@
           Göteborg, Stockholm och Malmö.
         </p>
       </div>
+      <div class="cover">
+        <img src="@/assets/img/concertsbanner1.jpg" alt="" />
+      </div>
+      <div class="item2"></div>
     </div>
     <div class="line"></div>
     <div id="search">
@@ -96,7 +97,7 @@ body {
 }
 .pic {
   height: 320px;
-  margin-bottom: 20px;
+  margin: 20px 0 0 100px;
   display: flex;
   justify-content: space-around;
 }
@@ -105,13 +106,13 @@ body {
   padding-top: 100px;
 }
 .pic img {
-  width: 800px;
+  width: 1000px;
   height: 300px;
   display: block;
   margin-bottom: 20px;
 }
-/* .cover {
-  width: 800px;
+.cover {
+  width: 1000px;
   height: 300px;
   position: relative;
 }
@@ -122,8 +123,9 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  box-shadow: 0 0 50px 0 #03a9f4 inset;
-} */
+  box-shadow: 0 0 50px 0 #b9e2f5 inset;
+}
+
 .events {
   display: flex;
   justify-content: space-between;
@@ -154,11 +156,32 @@ body {
 strong {
   font-size: 2rem;
 }
-
-@media only screen and (min-width: 1620px) {
-  .Img {
-    width: 100%;
-    height: 400px;
+/* 
+@media only screen and (max-width: 1220px) {
+  .pic img {
+    width: 600px;
+    height: 300px;
+  }
+}
+.cover {
+  width: 600px;
+  height: 300px;
+}
+.cover:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 50px 0 #b9e2f5 inset;
+} */
+@media only screen and (max-width: 1220px) {
+  .pic img {
+    display: none;
+  }
+  .cover {
+    display: none;
   }
 }
 </style>
