@@ -27,16 +27,7 @@ module.exports = {
           urlPattern:
             'https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&countryCode=SE'
         }
-      ],
-      workboxOptions: {
-        manifestTransforms: [
-          (manifest) => ({
-            manifest: manifest.concat([
-              { revision: 0, url: '/some-cachefirst-file.txt' }
-            ])
-          })
-        ]
-      }
+      ]
     }
   }
 }

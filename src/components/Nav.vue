@@ -1,16 +1,16 @@
 <template>
   <div id="nav">
-     <slot></slot>
-  </div>  
+    <slot></slot>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
-      return {
-        value: ''
-      }
-    },
-  name: 'Nav',
+    return {
+      value: ''
+    }
+  },
+  name: 'Nav'
 }
 </script>

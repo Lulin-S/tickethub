@@ -57,7 +57,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .topNav {
   display: flex;
   justify-content: space-between;
@@ -70,7 +70,10 @@ export default {
     text-decoration: none;
   }
   a:hover {
-    color: #75428a;
+    color: #fcf9f9;
+    z-index: 1;
+    //box-shadow: 0 8px 30px #afc2ec;
+    transform: scale(1.15);
   }
   // box-shadow: 10px 1px 20px  rgba(133, 134, 134, 0.6);
 }

@@ -40,10 +40,12 @@ span {
 }
 
 span:hover {
-  color: #050007;
+  z-index: 1;
+  //box-shadow: 0 8px 30px #afc2ec;
+  transform: scale(1.25);
 }
 
-@media only screen and (max-width: 800px) {
+@media (max-width: 800px) {
   span {
     font-size: 1rem;
   }
