@@ -1,36 +1,35 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "",
-    redirect: "/TicketHub",
+    path: '',
+    redirect: '/TicketHub'
   },
   {
-    path: "/TicketHub",
-    name: "Home",
-    component: () => import("views/Home.vue"),
+    path: '/TicketHub',
+    name: 'Home',
+    component: () => import('views/Home.vue')
   },
   {
-    path: "/profile/:inputedname",
-    name: "Profile",
+    path: '/profile/:inputedname',
+    name: 'Profile',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import("views/Profile.vue"),
+    component: () => import('views/Profile.vue')
   },
   {
-    path: "/signin",
-    name: "Signin",
-    component: () => import("views/Signin.vue"),
-  },
-];
+    path: '/signin',
+    name: 'Signin',
+    component: () => import('views/Signin.vue')
+  }
+]
 
 const router = new VueRouter({
-  routes,
-  mode: "history",
-});
+  routes
+})
 
-export default router;
+export default router

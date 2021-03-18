@@ -45,8 +45,8 @@ $color: rgb(242, 245, 247);
 #bcard {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  font-size: 1.5rem;
+  justify-content: space-around;
+  font-size: 1.25rem;
   padding: 60px;
 }
 #cardbox {
